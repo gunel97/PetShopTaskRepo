@@ -56,28 +56,16 @@ function buildWishlist(data) {
     }
 }
 
-function initWishlist() {
-    fetch(`https://localhost:7045/wishlist/initwishlist`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            buildWishlist(data);
-        })
-}
 
 function addToWishlist(id) {
     fetch(`https://localhost:7045/wishlist/addtowishlist/${id}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
+        .then(response => response.json());
 }
 
 function removeFromWishlist(id) {
     fetch(`https://localhost:7045/wishlist/removefromwishlist/${id}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             buildWishlist(data);
         });
 }

@@ -18,7 +18,9 @@ namespace PetShopTaskMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var wishlistItems = GetWishlistItems();
+            var wishlistViewModel = GetWishlistViewModelFromCookie(wishlistItems);
+            return View(wishlistViewModel);
         }
 
         public List<WishlistCookieItemModel> AddWishlistItemToList(int id)
@@ -118,14 +120,6 @@ namespace PetShopTaskMVC.Controllers
                 });
 
             var wishlistViewModel = GetWishlistViewModelFromCookie(wishlistItemsFromCookie);
-            return Json(wishlistViewModel);
-        }
-
-        public IActionResult InitWishlist()
-        {
-            var wishlistItemsFromCookie = GetWishlistItems();
-            var wishlistViewModel = GetWishlistViewModelFromCookie(wishlistItemsFromCookie);
-
             return Json(wishlistViewModel);
         }
     }
