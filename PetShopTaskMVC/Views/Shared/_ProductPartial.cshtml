@@ -3,7 +3,7 @@
 <div class="card position-relative">
     <a href="single-product.html"><img src="~/images/@Model.CoverImageUrl" class="img-fluid rounded-4" alt="image"></a>
     <div class="card-body p-0">
-        <a href="single-product.html">
+        <a asp-controller="product" asp-action="details" asp-route-id="@Model.Id">
             <h3 class="card-title pt-4 m-0">@Model.Name</h3>
         </a>
 
