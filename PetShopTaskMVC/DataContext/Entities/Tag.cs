@@ -1,0 +1,10 @@
+﻿namespace PetShopTaskMVC.DataContext.Entities
+{
+    public class Tag:BaseEntity
+    {
+        public required string Name { get; set; }
+        public List<ProductTag> ProductTags { get; set; } = [];
+    }
+
+
+}

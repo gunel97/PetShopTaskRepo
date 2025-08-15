@@ -1,0 +1,43 @@
+﻿@model List<Product>
+
+@foreach (var product in Model)
+{
+    <div class="col-md-4 my-4">
+        <!-- <div class="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
+        New
+        </div> -->
+        <div class="card position-relative">
+            <a href="single-product.html"><img src="~/images/@product.CoverImageUrl" class="img-fluid rounded-4" alt="image"></a>
+            <div class="card-body p-0">
+                <a asp-controller="product" asp-action="details" asp-route-id="@product.Id">
+                    <h3 class="card-title pt-4 m-0">@product.Name</h3>
+                </a>
+
+                <div class="card-text">
+                    <span class="rating secondary-font">
+                        <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                        <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                        <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                        <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                        <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                        5.0
+                    </span>
+
+                    <h3 class="secondary-font text-primary">$@product.Price</h3>
+
+                    <div class="d-flex flex-wrap mt-3">
+                        <a class="btn-cart me-3 px-4 pt-3 pb-3">
+                            <h5 onclick="addToBasket(@product.Id)" class="text-uppercase m-0">Add to Cart</h5>
+                        </a>
+                        <a  class="btn-wishlist px-4 pt-3 ">
+                            <iconify-icon onclick="addToWishlist(@product.Id)" icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
