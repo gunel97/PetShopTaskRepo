@@ -33,7 +33,7 @@
             <div class="col-sm-4 col-lg-3 text-center text-sm-start">
                 <div class="main-logo">
                     <a asp-controller="home" asp-action="index">
-                        <img src="images/@bio?.LogoUrl" alt="logo" class="img-fluid">
+                        <img src="~/images/@bio?.LogoUrl" alt="logo" class="img-fluid">
                     </a>
                 </div>
             </div>
@@ -77,7 +77,7 @@
             <div class="d-flex d-lg-none align-items-end mt-3">
                 <ul class="d-flex justify-content-end list-unstyled m-0">
                     <li>
-                        <a href="account.html" class="mx-3">
+                        <a class="mx-3">
                             <iconify-icon icon="healthicons:person" class="fs-4"></iconify-icon>
                         </a>
                     </li>
@@ -101,7 +101,6 @@
                         <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch"
                            aria-controls="offcanvasSearch">
                             <iconify-icon icon="tabler:search" class="fs-4"></iconify-icon>
-                            </span>
                         </a>
                     </li>
                 </ul>
@@ -187,7 +186,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="account.html" class="dropdown-item">
+                                    <a class="dropdown-item">
                                         Account<span class="badge bg-success text-dark ms-2">PRO</span>
                                     </a>
                                 </li>
@@ -225,9 +224,18 @@
                     <div class="d-none d-lg-flex align-items-end">
                         <ul class="d-flex justify-content-end list-unstyled m-0">
                             <li>
-                                <a href="account.html" class="mx-3">
+                                <a class="mx-3">
                                     <iconify-icon icon="healthicons:person" class="fs-4"></iconify-icon>
                                 </a>
+                                @if (User.Identity!.IsAuthenticated)
+                                {
+                                    <span>@User.Identity.Name</span>
+                                    <a asp-controller="account" asp-action="logout">Log Out</a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="account" asp-action="login">Login</a>
+                                }
                             </li>
                             <li>
                                 <a asp-controller="wishlist" asp-action="index" class="mx-3">

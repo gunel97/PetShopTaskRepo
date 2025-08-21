@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PetShopTaskMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19a17f073a9e1eb96046ac15023b4d1d86cab6f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3f2c598ceead1cf7bf2f76c924483ca77caf687")]
 [assembly: System.Reflection.AssemblyProductAttribute("PetShopTaskMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PetShopTaskMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
